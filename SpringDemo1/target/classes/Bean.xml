@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="hellobean"
+		class="com.org.SpringDemo1.HelloWorldServiceClass"></bean>
+	<!-- naming bean -->
+	<bean id="hellobean1" class="com.org.SpringDemo1.Vendor1"></bean>
+	<bean id="hellobean2" class="com.org.SpringDemo1.Vendor2"></bean>
+	<!-- lazy initialization <bane id="" class="" lazy-init="true"> -->
+	<!-- bean id="" class="" init-method="" -->
+
+	<bean id="emp" class="com.demo.bean.Employee">
+		<property name="id" value="101"></property>
+		<property name="name" value="raju"></property>
+		<property name="salary" value="40000"></property>
+	</bean>
+
+	<!-- cons based dependancy -->
+	<bean id="acc" class="com.di_con.Accountant"></bean>
+	<bean id="hrm" class="com.di_con.Hr"></bean>
+	<bean id="manager" class="com.di_con.Manager">
+	<constructor-arg ref="acc" />
+	<constructor-arg ref="hrm" />
+	</bean>
+	
+	<bean id="emp1" class="com.org.setter_dependency.Employee">
+	<property name="eid" value="1" />
+	<property name="ename" value="dhan" />
+	<property name="ecity" value="guntur" />
+	
+	</bean>
+	
+	<!-- autowire example -->
+	
+	<bean id="a" class="com.org.autowire.ClassA" autowire="byName"></bean>
+	<bean id="b" class="com.org.autowire.ClassB"></bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</beans>
